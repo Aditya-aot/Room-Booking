@@ -1,13 +1,13 @@
 from django.shortcuts import render,redirect
 
 from .models import room_book
-from .forms import ChatForm , ChatForm2
+from .forms import ChatForm 
 
 # Create your views here.
 def book_view(request) :
 
     form= ChatForm()
-    form2=ChatForm2()
+    # form2=ChatForm2()
     set_model = room_book.objects.all()
     seat_html = '' 
     seat_html2=''
@@ -34,7 +34,7 @@ def book_view(request) :
 
 
     context ={ 'form':form ,
-                'form2':form2,
+                # 'form2':form2,
                 'seat':seat_html,
                 'seat2':seat_html2
 
@@ -45,7 +45,17 @@ def book_view(request) :
 
 
 def done_view(request) :
+    set_model = room_book.objects.all()
+    username = request.user
+    payment_data = set_model.filter(user = username)
+    context = {'pay':payment_data,
+    
+                }
+    return render(request, 'book/done.html' , context )
+
+
+def home_view(request) :
 
     context = {}
-    return render(request, 'book/done.html' , context )
+    return render(request, 'free/index.html' , context )
 

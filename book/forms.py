@@ -1,7 +1,7 @@
 from faulthandler import disable
 from django import forms
 from django.forms import ModelForm
-from .models import room_book , user_book
+from .models import room_book 
 
 
 
@@ -22,17 +22,17 @@ class ChatForm(ModelForm):
             # 'a102'
  ]
 
-class ChatForm2(ModelForm):
-    book = forms.RadioSelect()
-    # book2 = forms.CheckboxInput(user_book.objects(40)) 
+# class ChatForm2(ModelForm):
+#     book = forms.RadioSelect()
+#     # book2 = forms.CheckboxInput(user_book.objects(40)) 
     
-    class Meta:
-        model = user_book
-        fields = [
-            'book' ,
+#     class Meta:
+#         model = user_book
+#         fields = [
+#             'book' ,
 
- ]
+#  ]
 
 
 
-# room_book object (40)
+# # room_book object (40)

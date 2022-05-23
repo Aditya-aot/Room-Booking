@@ -1,13 +1,62 @@
 {% extends 'book/base.html'%}
 {% block content %}
-
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="static/style3.css" />
+   
 
 <h1>DONE</h1>
 
+            {% for i in pay %}
+
+
+            <h3>{{i.user}}</h3> <h4>you have booked this Room</h4> <br>
+           
+          {% if i.a101 %} 
+              Room no A101 :<aa style="color:green;">  {{i.a101}} </aa> <br>
+          {% endif %}
+          
+          {% if i.a102 %} 
+            Room no A102 : <aa style="color:green;">{{i.a102}} </aa> <br>
+          {% endif %}
+
+          {% if i.a103 %} 
+              Room no A103 :<aa style="color:green;"> {{i.a103}} </aa> <br>
+          {% endif %}
+
+          {% if i.a104 %} 
+              Room no A104 : <aa style="color:green;">  {{i.a104}} </aa> <br>
+          {% endif %}
+
+          {% if i.a105 %} 
+              Room no A105 : <aa style="color:green;">  {{i.a105}} </aa> <br>
+          {% endif %}
+
+          {% if i.a106 %} 
+              Room no A106 : <aa style="color:green;">  {{i.a106}} </aa> <br>
+          {% endif %}
+
+          {% if i.a107 %} 
+              Room no A107 :<aa style="color:green;">  {{i.a107}} </aa> <br>
+          {% endif %}
+
+          {% if i.a108 %} 
+              Room no A108 :<aa style="color:green;"> {{i.a108}} </aa> <br> 
+          {% endif %}
+
+            {% endfor %}
 
  <a class="nav-link" href="/">
         <button type="button" class="btn btn-primary btn-lg">Go Back</button>
     
       </a>
+
+      <a class="nav-link" href="/make_this_page_by_your_self_;)">
+      <button type="button" class="btn btn-primary btn-lg">Buy Now</button>
+    </a>
 
 {% endblock content %}

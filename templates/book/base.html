@@ -1,95 +1,174 @@
-<!DOCTYPE html>
-{% load static %}
+<!doctype html>
 <html lang="en">
-<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<head>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-       
- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-   <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js'></script>
+        <meta name="description" content="Finding a comfortable home can be a challenging task. with our wesites your chlidern will not face any kind of problem in finding their home away home.CLICK NOW ! !">
+        <meta name="author" content="">
+
+        <title>Hostel Divine Lodge</title>
+
+        <!-- CSS FILES -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        
+        <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+                
+        <link href="static/css/bootstrap.min.css" rel="stylesheet">
+
+        <link href="static/css/bootstrap-icons.css" rel="stylesheet">
+
+        <link href="static/css/magnific-popup.css" rel="stylesheet">
+
+        <link href="static/css/tooplate-tween-agency.css" rel="stylesheet">
+
     
-    <script src="{% static 'styles/main1.js' %}" defer ></script> 
-    <link rel="stylesheet" href="{% static 'styles/styles.css' %} ">
+   
+
+    </head>
     
+    <body>
 
 
 
+        {% if user.is_authenticated %}
+        <nav class="navbar fixed-top navbar-expand-lg">
+            <!-- <div class="container"> -->
 
-
-    <meta charset="UTF-8">
-
-     <title> Aditya Stock</title>
-</head>     
-
-
-
-
-
-<body>
-
-    {% if user.is_authenticated %}
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="/">Navbar</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/">{{ user.first_name}}</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/accounts/logout">Logout</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link disabled">Disabled</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-
-
-
-    {% else %}
-
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="/">Navbar</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/accounts/login">login</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/accounts/register">register</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link disabled">Disabled</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-{% endif %}
-
-
- </body>
+                <a href="index.html" class="navbar-brand">
+                    <i class="bi-layers"></i> HDL
  
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-lg-5">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/home">Home</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="/">Booking</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="/done">Cart</a>
+                        </li>
+
+
+                        <!-- <li class="nav-item">
+                            <a class="nav-link" href="#section_2">About</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#section_3">Hostels</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#section_4">Facilities</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#section_5">Pricing</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#section_6">Contact</a>
+                        </li> -->
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="/">Hi {{ user.first_name}}</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="/accounts/logout">Logout</a>
+                        </li>
+
+                    </ul>
+
+               
+                </div>
+            </div>
+        </nav>
+
+        {% else %}
+
+
+        <nav class="navbar fixed-top navbar-expand-lg">
+            <!-- <div class="container"> -->
+
+                <a href="index.html" class="navbar-brand">
+                    <i class="bi-layers"></i> HDL
+ 
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-lg-5">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#section_1">Home</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="/">Booking</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#section_2">About</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#section_3">Hostels</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#section_4">Facilities</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#section_5">Pricing</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#section_6">Contact</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="/accounts/login">login</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="/accounts/register">register</a>
+                        </li>
+
+                    </ul>
+
+               
+                </div>
+            </div>
+        </nav>
+        {% endif %}
+        
+        <script src="static/js/jquery.min.js"></script>
+        <script src="static/js/popper.js"></script>
+        <script src="static/js/bootstrap.min.js"></script>
+        <script src="static/js/jquery.backstretch.min.js"></script>
+        <script src="static/js/jquery.magnific-popup.min.js"></script>
+        <script src="static/js/magnific-popup-options.js"></script>
+        <script src="static/js/click-scroll.js"></script>
+        <script src="static/js/custom.js"></script>
+    </body>
+    </html>
+
  {% block content %}
 
  {% endblock content %}
+ 
