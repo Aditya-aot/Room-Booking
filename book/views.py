@@ -59,3 +59,18 @@ def home_view(request) :
     context = {}
     return render(request, 'free/index.html' , context )
 
+def more_view(request) :
+
+    context = {}
+    return render(request, 'free/more.html' , context )
+
+def boys_view(request) :
+
+    context = {}
+    return render(request, 'free/boysinfo.html' , context )
+
+
+def girls_view(request) :
+
+    context = {}
+    return render(request, 'free/girlsinfo.html' , context )
