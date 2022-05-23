@@ -7,7 +7,7 @@ from django.contrib.auth import get_user_model
 # Create your models here.
 
 class room_book(models.Model) :
-    user = models.OneToOneField(User,on_delete=models.CASCADE,null=True)
+    user = models.OneToOneField(User,on_delete=models.CASCADE,default=0)
     a101= models.BooleanField('101',default=False)
     a102= models.BooleanField('102',default=False)
     a103= models.BooleanField('103',default=False)
