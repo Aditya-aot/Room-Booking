@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'book',
     'accounts',
+    'django_extensions',
 
 ]
 
@@ -148,3 +149,11 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
 
 STATICFILES_STORAGE = 'whitenoise.storange.CompressedManifestStorage'
 django_heroku.settings(locals())
+
+
+
+# ######## graph model
+GRAPH_MODELS = {
+    'all_applications':True ,
+    'group_models' : True,
+}

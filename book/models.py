@@ -24,7 +24,7 @@ class room_book(models.Model) :
 #     user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
 
 class girl_room_book(models.Model) :
-    user = models.OneToOneField(User,on_delete=models.CASCADE,default=0)
+    user = models.OneToOneField(User,on_delete=models.CASCADE,null=True)
     a101= models.BooleanField('101',default=False)
     a102= models.BooleanField('102',default=False)
     a103= models.BooleanField('103',default=False)
